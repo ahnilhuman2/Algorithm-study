@@ -1,4 +1,4 @@
-package com.example.algorithmstudy.baekjoon10815;
+package com.example.algorithmstudy.baekjoon_10815;
 
 import java.io.BufferedReader;
 import java.io.IOException;

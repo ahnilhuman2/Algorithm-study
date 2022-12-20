@@ -1,4 +1,4 @@
-package com.example.algorithmstudy.baekjoon_1_7;
+package com.example.algorithmstudy.baekjoon_1_6;
 
 import java.util.Scanner;
 

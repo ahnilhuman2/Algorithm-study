@@ -1,26 +1,19 @@
-package com.example.algorithmstudy.level0_13_teamstudy;
+package com.example.algorithmstudy.level0_14;
 
-// 최빈값은 주어진 값 중에서 가장 자주 나오는 값을 의미합니다. 정수 배열 array가 매개변수로 주어질 때, 최빈값을 return 하도록 solution 함수를 완성해보세요.
-// 최빈값이 여러 개면 -1을 return 합니다.
+// 등차수열 혹은 등비수열 common이 매개변수로 주어질 때, 마지막 원소 다음으로 올 숫자를 return 하도록 solution 함수를 완성해보세요.
 
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.HashSet;
 
 public class solution {
-    public int solution(int[] array) {
-        HashMap<Integer, Integer> map = new HashMap<>();
-        int maxCnt = 0;
-        int maxNum = 0;
-        for (int a : array) {
-            map.put(a, map.getOrDefault(a, 0) + 1);
-            if (map.get(a) > maxCnt) {
-                maxCnt = map.get(a);
-                maxNum = a;
-            }else if (maxCnt == map.get(a)) {
-                maxNum = -1;
+    public int solution(int[] common) {
+
+            if (common[0+1] - common[0] == common[0+2] - common[0+1]) {
+                return common[common.length - 1] + (common[0+1] - common[0]);
             }
-        }
-        return maxNum;
+
+            if (common[0+1]/common[0] == common[0+2]/common[0+1]) {
+                return common[common.length - 1] * (common[0+1]/common[0]);
+            }
+        return common[common.length];
     }
 }

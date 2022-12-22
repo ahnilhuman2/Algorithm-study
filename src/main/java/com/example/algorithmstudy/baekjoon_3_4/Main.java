@@ -1,27 +1,24 @@
 package com.example.algorithmstudy.baekjoon_3_4;
 
-import java.util.Scanner;
+import java.io.*;
+import java.util.StringTokenizer;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int totalPrice = sc.nextInt();
-        int variety = sc.nextInt();
-        int result = 0;
+    public static void main(String[] args) throws IOException {
 
-        for (int i = 0; i < variety; i++) {
-            int price =  sc.nextInt();
-            int num =  sc.nextInt();
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringBuilder sb = new StringBuilder();
 
-            result +=  price * num;
+        int n = Integer.parseInt(br.readLine());
+        StringTokenizer st;
+
+        for (int i = 0; i < n; i++) {
+            st = new StringTokenizer(br.readLine());
+            int a = Integer.parseInt(st.nextToken());
+            int b = Integer.parseInt(st.nextToken());
+            sb.append(a + b).append("\n");
         }
-
-
-        if (result == totalPrice) {
-            System.out.println("Yes");
-        } else {
-            System.out.println("No");
-        }
+        System.out.println(sb);
 
 
     }

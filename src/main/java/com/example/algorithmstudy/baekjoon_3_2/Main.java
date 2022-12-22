@@ -7,8 +7,10 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();
 
-        for (int i = 1; i < 10; i++) {
-            System.out.println(a + " * " + i + " = " + a*i);
+        for (int i = 0; i < a; i++) {
+            int b = sc.nextInt();
+            int c = sc.nextInt();
+            System.out.println(b + c);
         }
     }
 }

@@ -23,5 +23,6 @@ public class Main {
             a = a/10;
         }
         return sum;
+        
     }
 }

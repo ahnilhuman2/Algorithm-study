@@ -10,7 +10,7 @@ public class Main {
 
         String ss = sc.nextLine();
 
-        for (int i = 'a'; i < 'z'; i++) {
+        for (int i = 'a'; i <= 'z'; i++) {
             int idx = -1;
             for (int j = 0; j < ss.length(); j++) {
                 if (i == ss.charAt(j)) {

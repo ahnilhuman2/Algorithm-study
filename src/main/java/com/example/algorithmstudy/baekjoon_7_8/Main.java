@@ -7,11 +7,12 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        BigInteger a = new BigInteger(sc.next());
+        BigInteger A = new BigInteger(sc.next());
         BigInteger b = new BigInteger(sc.next());
 
-        a = a.add(b);
+        A = A.add(b);
 
-        System.out.println(a);
+
+        System.out.println(A);
     }
 }

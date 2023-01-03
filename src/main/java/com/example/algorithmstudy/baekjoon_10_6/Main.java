@@ -3,9 +3,7 @@ package com.example.algorithmstudy.baekjoon_10_6;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -31,6 +29,36 @@ public class Main {
         int snum = 0;
         int range = 0;
 
+        Map<Integer, Integer> mp = new HashMap<>();
+
+        if (case1 == 1) {
+            snum =  arr[0];
+        }
+        for (int i = 0; i < case1; i++) {
+            if (mp.containsKey(arr[i])) {
+                mp.put(arr[i], mp.get(arr[i]) + 1);
+            } else {
+                mp.put(arr[i], 1);
+            }
+        }
+        int maxValue = Collections.max(mp.values());
+        ArrayList<Integer> arrayList = new ArrayList<>();
+        // 가장 많이 나온 값
+        for (Map.Entry<Integer, Integer> m : mp.entrySet()) {
+            if (m.getValue() == maxValue) {
+                arrayList.add(m.getKey());
+            }
+        }
+        Collections.sort(arrayList);
+        // 가장 많이 나온 값이 여러개일 경우 두번째로 작은 값
+        if (arrayList.size() > 1) {
+
+            snum = arrayList.get(1);
+        }
+        else {
+            // 가장 많이 나온 값이 하나면
+            snum = arrayList.get(0);
+        }
 
 
         midIdx = arr.length/2;

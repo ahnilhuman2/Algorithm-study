@@ -29,22 +29,22 @@ public class Main {
         int snum = 0;
         int range = 0;
 
-        Map<Integer, Integer> mp = new HashMap<>();
+        Map<Integer, Integer> map = new HashMap<>();
 
         if (case1 == 1) {
             snum =  arr[0];
         }
         for (int i = 0; i < case1; i++) {
-            if (mp.containsKey(arr[i])) {
-                mp.put(arr[i], mp.get(arr[i]) + 1);
+            if (map.containsKey(arr[i])) {
+                map.put(arr[i], map.get(arr[i]) + 1);
             } else {
-                mp.put(arr[i], 1);
+                map.put(arr[i], 1);
             }
         }
-        int maxValue = Collections.max(mp.values());
+        int maxValue = Collections.max(map.values());
         ArrayList<Integer> arrayList = new ArrayList<>();
         // 가장 많이 나온 값
-        for (Map.Entry<Integer, Integer> m : mp.entrySet()) {
+        for (Map.Entry<Integer, Integer> m : map.entrySet()) {
             if (m.getValue() == maxValue) {
                 arrayList.add(m.getKey());
             }

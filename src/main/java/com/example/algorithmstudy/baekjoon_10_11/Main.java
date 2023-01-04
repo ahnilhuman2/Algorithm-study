@@ -22,19 +22,12 @@ public class Main {
             arr[i][1] = name;
         }
 
-        Arrays.sort(arr, new Comparator<String[]>() {
-            @Override
-            public int compare(String[] o1, String[] o2) {
-                if (o1[0].equals(o2[0])) return 1;
-                return Integer.parseInt(o1[0]) - Integer.parseInt(o2[0]);
-            }
-        });
+        Arrays.sort(arr, (String[] o1, String[] o2) ->
+                o1[0] ==  o2[0] ? 1 : Integer.parseInt(o1[0]) - Integer.parseInt(o2[0])
+                );
 
         for (int i = 0; i < case1; i++) {
-            for (int j = 0; j < 2; j++) {
-                sb.append(arr[i][j]).append(" ");
-            }
-            sb.append("\n");
+            sb.append(arr[i][0]).append(" ").append(arr[i][1]).append("\n");
         }
 
         System.out.println(sb);

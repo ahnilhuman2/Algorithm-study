@@ -1,4 +1,4 @@
-package com.example.algorithmstudy.baekjoon_11_1;
+package com.example.algorithmstudy.baekjoon_11_2;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -11,16 +11,19 @@ public class Main {
 
         int num = Integer.parseInt(br.readLine());
 
-        int sum = factorial(num);
+        int sum = fibonacci(num);
 
         sb.append(sum);
         System.out.println(sb);
     }
 
-    public static int factorial(int num) {
-        if (num <= 1) {
+    public static int fibonacci(int num) {
+        if (num == 0) {
+            return 0;
+        }
+        if (num == 1) {
             return 1;
         }
-        return num * factorial(num - 1);
+        return fibonacci(num - 1) + fibonacci(num - 2);
     }
 }

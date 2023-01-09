@@ -35,7 +35,9 @@ public class Main {
                         return o1 - o2;
                     }
                 })
-                .forEach(System.out::println);
+                .forEach(System.out::print);
+
+
 
 
 //        ArrayList<Integer> resultArr =  arr1.stream().filter(a -> arr2.stream().noneMatch(Predicate.isEqual(a)))

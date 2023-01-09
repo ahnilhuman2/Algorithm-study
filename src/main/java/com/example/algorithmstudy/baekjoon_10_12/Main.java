@@ -28,9 +28,10 @@ public class Main {
 
         int[] arr2 = Arrays.stream(arr)
                 .distinct()
+                .sorted()
                 .toArray();
 
-        Arrays.sort(arr2);
+//        Arrays.sort(arr2);
 
         Map<Integer, Integer> map = new HashMap<>();
 

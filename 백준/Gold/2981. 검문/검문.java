@@ -1,7 +1,9 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -20,11 +22,20 @@ public class Main {
         for(int i = 2; i < case1; i++) {
             gcdValue = gcd(gcdValue, arr[i] - arr[i - 1]);
         }
-
-        for(int i = 2; i <= gcdValue / 2; i++) {
-            if(gcdValue % i == 0) {
-                sb.append(i + " ");
+        ArrayList<Integer> list = new ArrayList<>();
+        for(int i = 2; i <= Math.sqrt(gcdValue); i++) {
+            if (i * i == gcdValue) {
+                list.add(i);
+                continue;
             }
+            if(gcdValue % i == 0) {
+                list.add(i);
+                list.add(gcdValue / i);
+            }
+        }
+        Collections.sort(list);
+        for (int a : list) {
+            sb.append(a).append(" ");
         }
         sb.append(gcdValue);
         System.out.println(sb);

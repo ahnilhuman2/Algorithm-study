@@ -38,7 +38,6 @@ public class Main {
         }
         for (int i = 0; i < num; i++) {
             arr[depth] = i;
-            // 놓을 수 있는 위치일 경우 재귀호출
             if (possible(depth)) {
                 queen(depth + 1);
             }

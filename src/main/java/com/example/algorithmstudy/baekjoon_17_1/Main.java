@@ -7,11 +7,11 @@ import java.io.InputStreamReader;
 public class Main {
     static int cnt = 0;
     static int dpCnt = 0;
-    static int[] tmp;
+    static int[] memo;
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
-        tmp = new int[n];
+        memo = new int[n];
         fibo(n);
         fibonacci(n);
         System.out.println(cnt);
@@ -27,13 +27,13 @@ public class Main {
         return fibo(n - 1) + fibo(n - 2);
     }
     public static int fibonacci(int n) {
-        tmp[0] = 1;
-        tmp[1] = 1;
+        memo[0] = 1;
+        memo[1] = 1;
 
         for (int i = 2; i < n; i++) {
             dpCnt++;
-            tmp[i] = tmp[i-2] + tmp[i-1];
+            memo[i] = memo[i-2] + memo[i-1];
         }
-        return tmp[n-1];
+        return memo[n-1];
     }
 }

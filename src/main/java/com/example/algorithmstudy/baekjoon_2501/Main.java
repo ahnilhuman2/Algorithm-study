@@ -17,7 +17,7 @@ public class Main {
             if (N % i == 0) {
                 K--;
             }
-            //k번째 약수이면 i 출력
+
             if (K == 0) {
                 System.out.print(i);
                 return;

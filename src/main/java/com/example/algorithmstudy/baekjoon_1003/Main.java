@@ -16,7 +16,7 @@ public class Main {
         dp[1][0] = 0;
         dp[1][1] = 1;
 
-        
+
         int T = Integer.parseInt(br.readLine());
 
         StringBuilder sb = new StringBuilder();

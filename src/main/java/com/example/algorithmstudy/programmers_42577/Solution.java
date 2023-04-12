@@ -1,33 +1,20 @@
-package com.example.algorithmstudy.programmers_12926;
+package com.example.algorithmstudy.programmers_42577;
+
+import java.util.Arrays;
 
 public class Solution {
-    public String solution(String s, int n) {
-        String answer = "";
+    public boolean solution(String[] phone_book) {
+        boolean answer = true;
 
-        for (int i = 0; i < s.length(); i++) {
-            char c = s.charAt(i);
+        Arrays.sort(phone_book);
 
-            if (c >= 'a' && c <= 'z') {
-                if (c + n > 'z') {
-                    answer += (char) (c + n - 26);
 
-                } else {
-                    answer += (char) (c + n);
-                }
-
-            } else if (c >= 'A' && c <= 'Z') {
-                if (c + n > 'Z') {
-                    answer += (char) (c + n - 26);
-
-                } else {
-                    answer += (char) (c + n);
-                }
-
-            } else {
-                answer += (char) c;
+        for (int i = 0; i < phone_book.length-1; i++) {
+            if (phone_book[i+1].startsWith(phone_book[i])) {
+                answer = false;
+                break;
             }
         }
-
         return answer;
     }
 }

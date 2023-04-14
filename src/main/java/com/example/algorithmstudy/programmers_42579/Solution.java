@@ -22,34 +22,33 @@ public class Solution {
 
         ArrayList<Integer> list = new ArrayList<>();
         for (int i = 0; i < genreKey.size(); i++) {
-            String g = genreKey.get(i);
             int max = 0;
-            int firstidx = 0;
+            int firstIdx = 0;
 
             for (int j = 0; j < genres.length; j++) {
-                if (g.equals(genres[j])) {
+                if (genreKey.get(i).equals(genres[j])) {
                     if (max < plays[j]) {
                         max = plays[j];
-                        firstidx = j;
+                        firstIdx = j;
                     }
                 }
             }
 
             max = 0;
-            int secondidx = 0;
+            int secondIdx = 0;
 
             for (int j = 0; j < genres.length; j++) {
-                if (g.equals(genres[j])) {
-                    if (max < plays[j] && firstidx != j) {
+                if (genreKey.get(i).equals(genres[j])) {
+                    if (max < plays[j] && firstIdx != j) {
                         max = plays[j];
-                        secondidx = j;
+                        secondIdx = j;
                     }
                 }
             }
 
-            list.add(firstidx);
+            list.add(firstIdx);
             if (max != 0) {
-                list.add(secondidx);
+                list.add(secondIdx);
             }
         }
 

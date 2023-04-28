@@ -24,7 +24,7 @@ public class Solution {
             net[a][b] = 0;
             net[b][a] = 0;
 
-            answer = Math.min(answer, dfs(n, a));
+            answer = Math.min(answer, bfs(n, a));
 
             net[a][b] = 1;
             net[b][a] = 1;
@@ -34,7 +34,7 @@ public class Solution {
         return answer;
     }
 
-    public static int dfs(int n, int start) {
+    public static int bfs(int n, int start) {
         boolean visited[] = new boolean[n + 1];
         int cnt = 1;
 
@@ -56,6 +56,6 @@ public class Solution {
                 }
             }
         }
-        return Math.abs(n - cnt - cnt);
+        return Math.abs(n - (cnt * 2));
     }
 }
